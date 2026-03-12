@@ -1,4 +1,4 @@
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || '[localhost](http://localhost:8000)'
+const API_BASE_URL = "/api"
 
 export async function processCredit(files: File[], companyInfo: any) {
   // Step 1: Upload documents
