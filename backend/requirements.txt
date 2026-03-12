@@ -7,7 +7,7 @@ xgboost
 shap
 pdfplumber
 PyMuPDF
-openai
 requests
 python-multipart
 pydantic
+openai
