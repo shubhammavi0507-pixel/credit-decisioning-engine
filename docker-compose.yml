@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - NEWS_API_KEY=${NEWS_API_KEY}
+      - SERP_API_KEY=${SERP_API_KEY}
+    volumes:
+      - ./backend/data_lake:/app/data_lake
+      - ./backend/models:/app/models
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=[backend](http://backend:8000)
+    depends_on:
+      - backend
